@@ -9,10 +9,9 @@ var expressJWT     = require("express-jwt");
 var passport       = require("passport");
 var routes         = require('./config/routes');
 var cors           = require('cors');
+
+
 require("./config/passport")(passport);
-
-
-
 
 app.use(morgan("dev"));
 
@@ -44,12 +43,22 @@ app.use(function (err, req, res, next) {
   next();
 });
 
+
+//*******Front End******//
+// app.use("/", express.static("public"));
+// app.use("/", express.static("bower_components"));
+//
+// app.get("/*", function(req, res){
+//  res.sendFile(__dirname + "/asteroids/index.html");
+// });
+
+
+//*****Routing******//
 app.use('/api', routes);
-
-app.use(cors());
-
 app.listen(config.port, function(){
 console.log("Express is alive and kicking on port: ", config.port);
 });
 
+
+app.use(cors());
 mongoose.connect(config.database);
