@@ -1,5 +1,5 @@
 angular
-.module('asteroids')
+.module('asteroidsApp')
 .service('TokenService', TokenService);
 
 TokenService.$inject = ["$window", "jwtHelper"];

@@ -1,5 +1,5 @@
 angular
-  .module('asteroids')
+  .module('asteroidsApp')
   .service("CurrentUser", CurrentUser);
 
 CurrentUser.$inject = ["TokenService"];

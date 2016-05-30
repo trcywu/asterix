@@ -1,5 +1,5 @@
 angular
-  .module('asteroids')
+  .module('asteroidsApp')
   .factory('User', User);
 
 User.$inject = ['$resource', 'API'];

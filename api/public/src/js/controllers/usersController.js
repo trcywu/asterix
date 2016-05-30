@@ -1,5 +1,5 @@
 angular
-  .module('asteroids')
+  .module('asteroidsApp')
   .controller('UsersController', UsersController);
 
 UsersController.$inject = ['User', 'CurrentUser', '$state', '$stateParams'];
