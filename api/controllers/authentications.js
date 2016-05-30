@@ -5,7 +5,7 @@ var jwt      = require("jsonwebtoken");
 
 function register(req, res, next) {
   var localStrategy = passport.authenticate('local-signup', function(err, user, info) {
-    if (err) return res.status(500).json(info);
+    if (err) return res.status(500).json(err);
     if (info) return res.status(401).json(info);
     if (!user) return res.status(401).json(info);
 
@@ -26,7 +26,12 @@ function login(req, res, next) {
   User.findOne({
     "email": req.body.email
   }, function(err, user) {
-    if (err) return res.status(500).json({ message: "Something went wrong" });
+    if (err) return res.status(500).json(
+      { message: "Something went wrong", 
+        err: err,
+        user: user
+      }
+    );
     if (!user) return res.status(403).json({ message: 'No user found.' });
     if (!user.validatePassword(req.body.password)) return res.status(403).json({ message: 'Authentication failed.' });
 

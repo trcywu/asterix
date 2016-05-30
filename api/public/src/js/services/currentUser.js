@@ -14,6 +14,7 @@ function CurrentUser(TokenService){
     }
 
     function clearUser() {
-
+        self.user = null;
+        return TokenService.removeToken();
     }
 }
