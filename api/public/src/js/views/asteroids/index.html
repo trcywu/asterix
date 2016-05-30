@@ -1,0 +1,19 @@
+<h1>Asteroids</h1>
+<section ng-controller = "AsteroidsController as asteroids">
+  <h2>Asteroids in space</h2>
+  <ul class="asteroids">
+    <li ng-repeat="near_earth_objects in asteroids">
+     <div ng-repeat="(key, name) in near_earth_objects">
+         {{start_date}} : {{name}}
+     </div>
+    </li>
+
+  </ul>
+ <!--  {{ asteroids.data }} -->
+
+</section>
+
+
+<!-- <div ng-repeat="step in steps">
+   
+</div> -->

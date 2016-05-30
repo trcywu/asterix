@@ -14,6 +14,10 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       url: "/",
       templateUrl: "/src/js/views/home.html"
     })
+    .state('asteroids', {
+      url: "/asteroids",
+      templateUrl: "/src/js/views/asteroids/index.html"
+    })
     .state('login', {
       url: "/login",
       templateUrl: "/src/js/views/authentications/login.html"
