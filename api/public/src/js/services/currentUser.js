@@ -1,5 +1,5 @@
 angular
-  .module('logging')
+  .module('asteroids')
   .service("CurrentUser", CurrentUser);
 
 CurrentUser.$inject = ["TokenService"];

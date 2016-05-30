@@ -2,8 +2,8 @@ angular
   .module('asteroids')
   .controller('UsersController', UsersController);
 
-UsersController.$inject = ['User', 'CurrentUser', '$state'];
-function UsersController(User, CurrentUser, $state){
+UsersController.$inject = ['User', 'CurrentUser', '$state', '$stateParams'];
+function UsersController(User, CurrentUser, $state, $stateParams){
 
   var self = this;
 

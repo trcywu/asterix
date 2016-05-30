@@ -6,9 +6,9 @@
     <script src="./js/app.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/app.css">
   </head>
-  <body>
-    rahahahahahaah
-    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+  <body ng-controller="UsersController as users">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li ng-show="users.checkLoggedIn()">
           <a href="#" ui-sref="users">Users</a>
@@ -23,6 +23,7 @@
           <a href="#"ui-sref="home" ng-click="users.logout()">Logout</a>
         </li>
       </ul>
-    </div> -->
+    </div>
+    <main ui-view></main>
   </body>
 </html>

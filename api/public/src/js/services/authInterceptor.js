@@ -1,5 +1,5 @@
 angular
-  .module('logging')
+  .module('asteroids')
   .factory('authInterceptor', AuthInterceptor);
 
 AuthInterceptor.$inject = ['API', 'TokenService'];
