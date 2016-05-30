@@ -48679,6 +48679,7 @@ angular.module('ui.router.state')
 angular
   .module('asteroidsApp', ['ngResource', 'angular-jwt', 'ui.router'])
   .constant('API', 'http://localhost:3000/api')
+  .constant('NASA_KEY', 'JO1yEF6ccMIYKvXOjCEmActpFwBIeSswDJErkJbX')
   .config(MainRouter)
   .config(function($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
@@ -48716,27 +48717,23 @@ function MainRouter($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
 }
 
-// angular
-//  .module('asteroidsApp')
-//  .controller('AsteroidsController', AsteroidsController);
+angular
+ .module('asteroidsApp')
+ .controller('AsteroidsController', AsteroidsController);
 
 
- // AsteroidsController.$inject = ['$http'];
- // function AsteroidsController($http){
+ AsteroidsController.$inject = ['Asteroid'];
+ function AsteroidsController(Asteroid){
 
- //   var self = this;
- //   self.all = [];
+  var self = this;
+  console.log(Asteroid);
+  Asteroid.query(function(response) {
+    self.data = response.data;
+  });
 
- //   function getAsteroids(){
- //     $http
- //      .get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2016-05-30&end_date=2016-06-06&api_key=JO1yEF6ccMIYKvXOjCEmActpFwBIeSswDJErkJbX')
- //      .then(function(response){
- //        console.log(response);
- //        self.all = response.data.asteroids;
- //      });
- //   }
- //   getAsteroids();
- // }
+
+
+ }
 
 angular
   .module('asteroidsApp')
@@ -48814,6 +48811,33 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
    return self;
  }
 angular
+ .module("asteroidsApp")
+ .factory('Asteroid', Asteroid);
+
+ Asteroid.$inject = ['$http', 'DateService', 'NASA_KEY'];
+ function Asteroid($http, DateService, NASA_KEY){
+
+  return {
+    query: function(callback){
+      var start_date = DateService.getDate(0);
+      var end_date = DateService.getDate(7);
+      return $http({
+        method: "GET",
+        url: "https://api.nasa.gov/neo/rest/v1/feed",
+        params: {
+          start_date: start_date,
+          end_date: end_date,
+          api_key: NASA_KEY
+        }
+      }).then(function(response) {
+        callback(response);
+      });
+      
+    }
+  };
+
+ }
+angular
   .module('asteroidsApp')
   .factory('User', User);
 
@@ -48884,6 +48908,28 @@ function CurrentUser(TokenService){
     }
 }
 
+angular
+  .module("asteroidsApp")
+  .service("DateService", DateService);
+
+function DateService() {
+  this.getDate = getDate;
+
+  function getDate(days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 86400000);
+
+    var year = date.getFullYear().toString();
+    var month = (date.getMonth() + 1 ).toString();
+    var day = date.getDate().toString();
+
+    day = day.length < 2 ? "0" + day : day;
+    month = month.length < 2 ? "0" + month : month;
+
+    return year + '-' + month + '-' + day;
+  }
+
+}
 angular
 .module('asteroidsApp')
 .service('TokenService', TokenService);

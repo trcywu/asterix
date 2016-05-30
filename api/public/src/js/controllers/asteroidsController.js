@@ -1,21 +1,17 @@
-// angular
-//  .module('asteroidsApp')
-//  .controller('AsteroidsController', AsteroidsController);
+angular
+ .module('asteroidsApp')
+ .controller('AsteroidsController', AsteroidsController);
 
 
- // AsteroidsController.$inject = ['$http'];
- // function AsteroidsController($http){
+ AsteroidsController.$inject = ['Asteroid'];
+ function AsteroidsController(Asteroid){
 
- //   var self = this;
- //   self.all = [];
+  var self = this;
+  console.log(Asteroid);
+  Asteroid.query(function(response) {
+    self.data = response.data;
+  });
 
- //   function getAsteroids(){
- //     $http
- //      .get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2016-05-30&end_date=2016-06-06&api_key=JO1yEF6ccMIYKvXOjCEmActpFwBIeSswDJErkJbX')
- //      .then(function(response){
- //        console.log(response);
- //        self.all = response.data.asteroids;
- //      });
- //   }
- //   getAsteroids();
- // }
+
+
+ }

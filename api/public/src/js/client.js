@@ -1,6 +1,7 @@
 angular
   .module('asteroidsApp', ['ngResource', 'angular-jwt', 'ui.router'])
   .constant('API', 'http://localhost:3000/api')
+  .constant('NASA_KEY', 'JO1yEF6ccMIYKvXOjCEmActpFwBIeSswDJErkJbX')
   .config(MainRouter)
   .config(function($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
