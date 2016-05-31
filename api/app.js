@@ -43,6 +43,8 @@ app.use(function (err, req, res, next) {
   next();
 });
 
+//*****Routing******//
+app.use('/api', routes);
 
 //*******Front End******//
 app.use("/", express.static("public"));
@@ -52,9 +54,6 @@ app.get("/*", function(req, res){
  res.sendFile(__dirname + "/public/index.html");
 });
 
-
-//*****Routing******//
-app.use('/api', routes);
 app.listen(config.port, function(){
 console.log("Express is alive and kicking on port: ", config.port);
 });

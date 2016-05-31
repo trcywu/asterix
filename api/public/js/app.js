@@ -48721,6 +48721,7 @@ function MainRouter($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
 }
 
+
 angular
  .module('asteroidsApp')
  .controller('AsteroidsController', AsteroidsController);
@@ -48757,6 +48758,15 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
 
+  // instantiate particles.js
+  // window.particlesJS.load('div-id', 'path/to/particles.json', function() {
+  //   console.log("Particles loaded");
+  // });
+
+  window.particlesJS.load('particles-js', 'particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
+
   // self.getAsteroids  = getAsteroids;
 
   // function getAsteroids() {
@@ -48769,8 +48779,9 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
   // }
 
   function getUsers() {
+    console.log("getting users???");
     User.query(function(data){
-      // console.log(data);
+      console.log(data);
       self.all = data.users;
     });
   }
