@@ -31,7 +31,7 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: "/src/js/views/users/index.html"
     })
     .state('user', {
-      url: "/users/:id",
+      url: "/user/:id",
       templateUrl: "/src/js/views/users/show.html",
       controller: function($scope, $stateParams, User) {
         User.get({ id: $stateParams.id }, function(res){

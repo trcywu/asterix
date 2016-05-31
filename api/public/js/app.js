@@ -48709,7 +48709,7 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: "/src/js/views/users/index.html"
     })
     .state('user', {
-      url: "/users/:id",
+      url: "/user/:id",
       templateUrl: "/src/js/views/users/show.html",
       controller: function($scope, $stateParams, User) {
         User.get({ id: $stateParams.id }, function(res){
@@ -48770,9 +48770,11 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
 
   function getUsers() {
     User.query(function(data){
+      // console.log(data);
       self.all = data.users;
     });
   }
+
 
   function handleLogin(res) {
     var token = res.token ? res.token : null;
@@ -48811,7 +48813,6 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
    }
 
    // getAsteroids();
-
    return self;
  }
 angular
@@ -48841,6 +48842,7 @@ angular
   };
 
  }
+
 angular
   .module('asteroidsApp')
   .factory('User', User);

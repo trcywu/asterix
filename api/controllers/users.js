@@ -1,13 +1,19 @@
 var User   = require('../models/user');
 
 function usersIndex(req, res) {
+  console.log("I am a request:")
+  console.log(req)
   User.find(function(err, users){
+    console.log("*************************")
+    console.log(users)
+    console.log("*************************")
     if (err) return res.status(404).json({ message: 'Something went wrong.' });
     res.status(200).json({ users: users });
   });
 }
 
 function usersShow(req, res){
+  console.log("I AM USERS SHOW")
   User.findById(req.params.id, function(err, user){
     if (err) return res.status(404).json({ message: 'Something went wrong.' });
     res.status(200).json({ user: user });

@@ -1,1 +1,20 @@
-<h1>users index</h1>
+<h1>Users</h1>
+<ul class="media-list">
+{{users}}
+<hr>
+<!-- {{users.all}} -->
+  <li class="media" ng-repeat="user in users">
+  {{user}}
+    <div class="media-left">
+      <a ui-sref="user({ id: user._id })">
+        <img class="media-object" ng-src="{{ user.image }}">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{ user.username }}</h4>
+      <p>name: {{ user.firstName }} {{ user.lastName }}</p>
+
+      <p>{{ user.email }}</p>
+    </div>
+  </li>
+</ul>

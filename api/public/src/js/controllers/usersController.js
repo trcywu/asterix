@@ -29,9 +29,11 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
 
   function getUsers() {
     User.query(function(data){
+      // console.log(data);
       self.all = data.users;
     });
   }
+
 
   function handleLogin(res) {
     var token = res.token ? res.token : null;
@@ -70,6 +72,5 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
    }
 
    // getAsteroids();
-
    return self;
  }
