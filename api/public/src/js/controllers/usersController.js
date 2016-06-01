@@ -21,7 +21,7 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
   //   console.log("Particles loaded");
   // });
 
-  window.particlesJS.load('particles-js', 'particles.json', function() {
+ particlesJS.load('particles-js', '/particles.json', function() {
     console.log('callback - particles.js config loaded');
   });
 
