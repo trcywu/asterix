@@ -7960,10 +7960,35 @@ canvas {
   width: 100%;
   height: 100%;
   background-color: #232741;
-  background-image: url("http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1237px-NASA_logo.svg.png");
   background-repeat: no-repeat;
-  background-size: 20%;
+  background-size: 40%;
   background-position: 50% 50%;
+}
+
+#earth {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background: url(http://www.noirextreme.com/digital/Earth-Color4096.jpg);
+  border-radius: 50%;
+  background-size: 210px;
+  box-shadow: inset 16px 0 40px 6px black, inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);
+  animation-name: rotate;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 210px;
+  }
 }
 
 /* ---- stats.js ---- */
@@ -8000,4 +8025,13 @@ canvas {
 
 .count-particles {
   border-radius: 0 0 3px 3px;
+}
+
+@keyframes rotate {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 210px;
+  }
 }
