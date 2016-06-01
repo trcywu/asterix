@@ -50299,7 +50299,8 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
 
-  // instantiate particles.js
+  // ******** instantiate particles.js ******** //
+
   // window.particlesJS.load('div-id', 'path/to/particles.json', function() {
   //   console.log("Particles loaded");
   // });
@@ -50308,16 +50309,25 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
     console.log('callback - particles.js config loaded');
   });
 
-  // self.getAsteroids  = getAsteroids;
+ // var stats = new Stats();
+ // stats.setMode(0);
+ // stats.domElement.style.position = 'absolute';
+ // stats.domElement.style.left = '0px';
+ // stats.domElement.style.top = '0px';
+ // document.body.appendChild(stats.domElement);
+ // var count_particles = document.querySelector('.js-count-particles');
+ // var update = function(){
+ //   stats.begin();
 
-  // function getAsteroids() {
-  //   $http
-  //     .get("https://api.nasa.gov/neo/rest/v1/feed?start_date=2016-05-30&end_date=2016-06-06&api_key=JO1yEF6ccMIYKvXOjCEmActpFwBIeSswDJErkJbX")
-  //     .then(function(response) {
-  //       console.log(response);
-  //       self.asteroids = response.data.near_earth_objects
-  //     });
-  // }
+ //   stats.end();
+ //   if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+ //     count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+ //   }
+ //   requestAnimationFrame(update);
+ // };
+ // requestAnimationFrame(update);
+
+//********* Users *******//
 
   function getUsers() {
     console.log("getting users???");
