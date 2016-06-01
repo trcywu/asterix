@@ -2,8 +2,8 @@ angular
   .module('asteroidsApp')
   .controller('UsersController', UsersController);
 
-UsersController.$inject = ['User', 'CurrentUser', '$state', '$stateParams', '$http'];
-function UsersController(User, CurrentUser, $state, $stateParams, $http){
+UsersController.$inject = ['User', 'CurrentUser', '$state', '$stateParams', '$http', '$uibModal', '$uibModalStack'];
+function UsersController(User, CurrentUser, $state, $stateParams, $http, $uibModal, $uibModalStack){
   var self = this;
 
   self.all           = [];
@@ -15,16 +15,52 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
   self.login         = login;
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
+  self.open          = open;
+  self.close         = close;
+
 
   // ******** instantiate particles.js ******** //
 
   // window.particlesJS.load('div-id', 'path/to/particles.json', function() {
   //   console.log("Particles loaded");
   // });
+  particlesJS.load('particles-js', '/particles.json', function() {
+     console.log('callback - particles.js config loaded');
+   });
 
- particlesJS.load('particles-js', '/particles.json', function() {
-    console.log('callback - particles.js config loaded');
-  });
+  
+  function open(form){
+
+    self.modalInstance = $uibModal.open({
+      animation: true,
+      templateUrl: "/src/js/views/authentications/"+form+".html",
+      size: 'lg',
+      controller: "UsersController",
+      controllerAs: "users"
+    });
+    // self.modalInstance = $uibModal.open({
+    //   animation: true,
+    //   templateUrl: "/src/js/views/authentications/register.html",
+    //   size: 'sm',
+    //   controller: "UsersController",
+    //   controllerAs: "users"
+    // });
+
+    self.modalInstance.result.then(function(selectedItem){
+      self.selected = selectedItem;}, function(){
+        console.log('Modal here');
+      }
+    );
+
+  }
+
+  function close(){
+    $uibModalStack.dismissAll();
+  }
+
+  
+
+ 
 
  // var stats = new Stats();
  // stats.setMode(0);
@@ -94,3 +130,4 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http){
    // getAsteroids();
    return self;
  }
+

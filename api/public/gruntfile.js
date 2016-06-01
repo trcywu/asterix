@@ -101,6 +101,6 @@ module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['jshint', 'bower_concat', 'sass:expanded', 'concat', 'uglify', 'watch']);
+  grunt.registerTask('default', ['jshint', 'bower_concat', 'sass:expanded', 'concat', 'watch']);
   grunt.registerTask('deploy', ['jshint', 'bower_concat', 'sass:compressed', 'concat', 'uglify']);
 };

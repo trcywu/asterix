@@ -1,6 +1,19 @@
 @import "_bower";
 
-body { margin:0; font:normal 75% Arial, Helvetica, sans-serif; } 
+.nav {
+  font-size: 16px;
+}
+
+img {
+  width: 50px;
+  height: 70px;
+  padding-bottom: 40px;
+}
+
+body { 
+  margin:0; 
+  font:Helvetica; 
+} 
 
 canvas{ display: block; vertical-align: bottom; } 
 
@@ -10,47 +23,20 @@ canvas{ display: block; vertical-align: bottom; }
   position:absolute; 
   width: 100%; 
   height: 100%; 
-  background-color: #232741; 
-  // background-image: url(http://www.noirextreme.com/digital/Earth-Color4096.jpg); 
-  background-repeat: no-repeat; 
-  background-size: 40%; 
-  background-position: 50% 50%; 
-
+  background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%);
+  // background-color: #232741; 
+  // background-size: 40%; 
+  // background-position: 50% 50%; 
 }
-
-// img {
-//   border-radius: 50%;
-//   background-size: 210px;
-//   box-shadow: inset 16px 0 40px 6px rgb(0, 0, 0),
-//     inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);
-//   animation-name: rotate;
-//   animation-duration: 4s;
-//   animation-iteration-count: infinite;
-//   animation-timing-function: linear;
-
-// }
-
-
-// #particles-js img {
-//     border-radius: 50%;
-//     background-size: 210px;
-//     box-shadow: inset 16px 0 40px 6px rgb(0, 0, 0),
-//       inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);
-//     animation-name: rotate;
-//     animation-duration: 4s;
-//     animation-iteration-count: infinite;
-//     animation-timing-function: linear;
-
-// }
 
 
   #earth {
-    width: 100px;
-    height: 100px;
+    width: 210px;
+    height: 210px;
     position: absolute;
     background: url(http://www.noirextreme.com/digital/Earth-Color4096.jpg);
     border-radius: 50%;
-    background-size: 210px;
+    background-size: 420px;
     box-shadow: inset 16px 0 40px 6px rgb(0, 0, 0),
       inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);
     animation-name: rotate;
@@ -64,7 +50,7 @@ canvas{ display: block; vertical-align: bottom; }
 
   @keyframes rotate {
     from { background-position-x: 0px; }
-    to { background-position-x: 210px; }
+    to { background-position-x: 420px; }
   }
 
 /* ---- stats.js ---- */ 
@@ -75,7 +61,7 @@ canvas{ display: block; vertical-align: bottom; }
   top: 48px; 
   left: 0; 
   width: 80px; 
-  color: #13E8E9; 
+  color: black;//#13E8E9; 
   font-size: .8em; 
   text-align: left; 
   text-indent: 4px; 
@@ -94,7 +80,6 @@ canvas{ display: block; vertical-align: bottom; }
   border-radius: 0 0 3px 3px; 
 }
 
-// EARTH //
 
 
 

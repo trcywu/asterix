@@ -7944,9 +7944,19 @@ button.close {
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
+.nav {
+  font-size: 16px;
+}
+
+img {
+  width: 50px;
+  height: 70px;
+  padding-bottom: 40px;
+}
+
 body {
   margin: 0;
-  font: normal 75% Arial, Helvetica, sans-serif;
+  font: Helvetica;
 }
 
 canvas {
@@ -7959,19 +7969,16 @@ canvas {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #232741;
-  background-repeat: no-repeat;
-  background-size: 40%;
-  background-position: 50% 50%;
+  background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%);
 }
 
 #earth {
-  width: 100px;
-  height: 100px;
+  width: 210px;
+  height: 210px;
   position: absolute;
   background: url(http://www.noirextreme.com/digital/Earth-Color4096.jpg);
   border-radius: 50%;
-  background-size: 210px;
+  background-size: 420px;
   box-shadow: inset 16px 0 40px 6px black, inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);
   animation-name: rotate;
   animation-duration: 60s;
@@ -7987,7 +7994,7 @@ canvas {
     background-position-x: 0px;
   }
   to {
-    background-position-x: 210px;
+    background-position-x: 420px;
   }
 }
 
@@ -7998,7 +8005,7 @@ canvas {
   top: 48px;
   left: 0;
   width: 80px;
-  color: #13E8E9;
+  color: black;
   font-size: .8em;
   text-align: left;
   text-indent: 4px;

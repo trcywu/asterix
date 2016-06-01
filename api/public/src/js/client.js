@@ -1,5 +1,5 @@
 angular
-  .module('asteroidsApp', ['ngResource', 'angular-jwt', 'ui.router'])
+  .module('asteroidsApp', ['ngResource', 'angular-jwt', 'ui.router', 'ui.bootstrap'])
   .constant('API', 'http://localhost:3000/api')
   .constant('NASA_KEY', 'JO1yEF6ccMIYKvXOjCEmActpFwBIeSswDJErkJbX')
   .config(MainRouter)
