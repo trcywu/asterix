@@ -7945,10 +7945,6 @@ button.close {
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
-/*
-  Copyright (c) 2012 Julian Garnier
-  Licensed under the MIT license
-*/
 .asteroids {
   color: white;
   border: 1px solid white;
@@ -7956,148 +7952,6 @@ button.close {
   width: 300px;
   height: 300px;
   align-items: center;
-}
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-* {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  font-size: 10px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  background-color: #08090A;
 }
 
 #universe {
@@ -8115,7 +7969,6 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  /*perspective: 4000;*/
 }
 
 #solar-system {
@@ -8190,32 +8043,6 @@ body {
   border-radius: 50%;
 }
 
-#saturn .ring {
-  width: 2em;
-  height: 2em;
-  margin-top: -1em;
-  margin-left: -1em;
-  border: 0.3em solid rgba(160, 147, 130, 0.7);
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-#saturn .ring:after {
-  border-radius: 50%;
-  position: absolute;
-  content: '';
-  top: 50%;
-  left: 50%;
-  width: 2.2em;
-  height: 2.2em;
-  margin-top: -1.1em;
-  margin-left: -1.1em;
-  border: 0.07em solid rgba(160, 147, 130, 0.5);
-  box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* --------------------------------------------------------------------------- planets index */
 #jl6 {
   z-index: 10;
 }
@@ -8226,30 +8053,6 @@ body {
 
 #earth {
   z-index: 8;
-}
-
-#moon {
-  z-index: 7;
-}
-
-#mars {
-  z-index: 6;
-}
-
-#jupiter {
-  z-index: 5;
-}
-
-#saturn {
-  z-index: 4;
-}
-
-#uranus {
-  z-index: 3;
-}
-
-#neptune {
-  z-index: 2;
 }
 
 #earth {
@@ -8343,35 +8146,6 @@ body {
   transform: rotateX(0deg);
 }
 
-/* --------------------------------------------------------------------------- large zoom */
-.zoom-large #solar-system {
-  width: 100%;
-}
-
-.zoom-large.view-2D .scale-stretched #solar-system {
-  font-size: 26%;
-}
-
-.zoom-large.view-3D .scale-stretched #solar-system {
-  font-size: 62%;
-}
-
-.zoom-large.view-2D .scale-d #solar-system {
-  font-size: 22%;
-}
-
-.zoom-large.view-3D .scale-d #solar-system {
-  font-size: 48%;
-}
-
-.zoom-large.view-2D .scale-s #solar-system {
-  font-size: 7%;
-}
-
-.zoom-large.view-3D .scale-s #solar-system {
-  font-size: 14%;
-}
-
 /* --------------------------------------------------------------------------- close zoom */
 .zoom-close #solar-system {
   width: 200%;
@@ -8434,8 +8208,6 @@ body {
   top: 50% !important;
 }
 
-/* --------------------------------------------------------------------------- data */
-/* --------------------------------------------------------------------------- speed */
 /* sideral years */
 #jl6 .pos,
 #jl6 .planet2,
@@ -8601,22 +8373,6 @@ body {
 
 .scale-s #mars .planet2 {
   font-size: 2.0334em;
-}
-
-.scale-s #jupiter .planet2 {
-  font-size: 41.9466em;
-}
-
-.scale-s #saturn .planet2 {
-  font-size: 34.9392em;
-}
-
-.scale-s #uranus .planet2 {
-  font-size: 15.2172em;
-}
-
-.scale-s #neptune .planet2 {
-  font-size: 14.7732em;
 }
 
 /* --------------------------------------------------------------------------- stretched orbits */
@@ -9811,6 +9567,14 @@ h1 {
   }
 }
 
+body {
+  margin: 0;
+}
+
+.navbar {
+  margin: 0;
+}
+
 .nav {
   font-size: 16px;
 }
@@ -9821,18 +9585,11 @@ img {
   padding-bottom: 40px;
 }
 
-body {
-  margin: 0;
-}
-
 canvas {
   display: block;
   vertical-align: bottom;
 }
 
-/* ----- rings ----- *?
-
-/* ---- particles.js container ---- */
 #particles-js {
   position: absolute;
   width: 100%;
