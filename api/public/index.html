@@ -8,25 +8,25 @@
   <link rel="stylesheet" type="text/css" href="./css/app.css">
 </head>
 
-<body ng-controller="UsersController as users">
-
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand link" data-template="home"><img src="./src/images/asterix.png"></a>
-       </div>
-       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<body ng-controller="UsersController as users" class="opening hide-UI view-2D data-close controls-close">
+<!-- zoom-large  -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand link" data-template="home"><img src="./src/images/asterix.png"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-        <li>
-         <a href="#" ui-sref="asteroids">Asteroids</a>
-        </li>
-        <li ng-show="users.checkLoggedIn()">
+          <li>
+           <a href="#" ui-sref="asteroids">Asteroids</a>
+         </li>
+         <li ng-show="users.checkLoggedIn()">
           <a href="#" ui-sref="users">Users</a>
         </li>
         <li ng-show="users.checkLoggedIn()">
@@ -57,12 +57,75 @@
   </div> -->
 
 
-  <main ui-view></main>
+  <!-- <main ui-view></main> -->
 
- <div id="particles-js">
-   
-   <div id="earth">
-     <!-- <img src="http://www.noirextreme.com/digital/Earth-Color4096.jpg"> -->
+  <div id="particles-js">
+
+    <div id="universe" class="scale-stretched">
+      <div id="galaxy">
+        <div id="solar-system" class="earth">
+
+        <div id="jl6" class="orbit">
+          <div class="pos">
+            <div class="planet2">
+              <dl class="infos">
+                <dt>2016 JL6</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="jl7" class="orbit">
+          <div class="pos">
+            <div class="planet2">
+              <dl class="infos">
+                <dt>2016 JL6</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="jl8" class="orbit">
+          <div class="pos">
+            <div class="planet2">
+              <dl class="infos">
+                <dt>2016 JL6</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="jl9" class="orbit">
+          <div class="pos">
+            <div class="planet2">
+              <dl class="infos">
+                <dt>2016 JL6</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div id="jl10" class="orbit">
+          <div class="pos">
+            <div class="planet2">
+              <dl class="infos">
+                <dt>2016 JL6</dt>
+                <dd><span></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div id="earthImage"></div>
+
+         <!-- <div id="earth">
+           <dl class="infos">
+             <dt>Earth</dt>
+             <dd><span></span></dd>
+           </dl>
+         </div> -->
+       </div>
+     </div>
    </div>
 
  </div> 

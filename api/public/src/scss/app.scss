@@ -1,44 +1,42 @@
 @import "_bower";
-
+@import "_planet";
 .nav {
-  font-size: 16px;
+    font-size: 16px;
 }
-
 img {
-  width: 50px;
-  height: 70px;
-  padding-bottom: 40px;
+    width: 50px;
+    height: 70px;
+    padding-bottom: 40px;
 }
-
-body { 
-  margin:0; 
-  font:Helvetica; 
-} 
-
-canvas{ display: block; vertical-align: bottom; } 
-
-/* ---- particles.js container ---- */ 
-
-#particles-js{ 
-  position:absolute; 
-  width: 100%; 
-  height: 100%; 
-  background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%);
-  // background-color: #232741; 
-  // background-size: 40%; 
-  // background-position: 50% 50%; 
+body {
+    margin: 0;
 }
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+/* ----- rings ----- *?
 
+/* ---- particles.js container ---- */
 
-  #earth {
-    width: 210px;
-    height: 210px;
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%);
+    // background-color: #232741; 
+    // background-size: 40%; 
+    // background-position: 50% 50%; 
+}
+#earthImage {
+    width: 100px;
+    height: 100px;
     position: absolute;
     background: url(http://www.noirextreme.com/digital/Earth-Color4096.jpg);
     border-radius: 50%;
-    background-size: 420px;
-    box-shadow: inset 16px 0 40px 6px rgb(0, 0, 0),
-      inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);
+    background-size: 200px;
+    box-shadow: inset 16px 0 40px 6px rgb(0, 0, 0), inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);
     animation-name: rotate;
     animation-duration: 60s;
     animation-iteration-count: infinite;
@@ -46,45 +44,54 @@ canvas{ display: block; vertical-align: bottom; }
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-  }
-
-  @keyframes rotate {
-    from { background-position-x: 0px; }
-    to { background-position-x: 420px; }
-  }
-
-/* ---- stats.js ---- */ 
-
-.count-particles{ 
-  background: #000022; 
-  position: absolute; 
-  top: 48px; 
-  left: 0; 
-  width: 80px; 
-  color: black;//#13E8E9; 
-  font-size: .8em; 
-  text-align: left; 
-  text-indent: 4px; 
-  line-height: 14px; 
-  padding-bottom: 2px; 
-  font-family: Helvetica, Arial, sans-serif; 
-  font-weight: bold; } 
-
-.js-count-particles{ font-size: 1.1em; } 
-
-#stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } 
-
-#stats{ border-radius: 3px 3px 0 0; overflow: hidden; } 
-
-.count-particles { 
-  border-radius: 0 0 3px 3px; 
+    margin: 0;
 }
-
-
-
-
-
 @keyframes rotate {
-  from { background-position-x: 0px; }
-  to { background-position-x: 210px; }
+    from {
+        background-position-x: 0px;
+    }
+    to {
+        background-position-x: 420px;
+    }
+}
+/* ---- stats.js ---- */
+
+.count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: black; //#13E8E9; 
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+.js-count-particles {
+    font-size: 1.1em;
+}
+#stats,
+.count-particles {
+    -webkit-user-select: none;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+#stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+.count-particles {
+    border-radius: 0 0 3px 3px;
+}
+@keyframes rotate {
+    from {
+        background-position-x: 0px;
+    }
+    to {
+        background-position-x: 210px;
+    }
 }

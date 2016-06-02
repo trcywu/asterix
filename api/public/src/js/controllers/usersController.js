@@ -24,6 +24,8 @@ function UsersController(User, CurrentUser, $state, $stateParams, $http, $uibMod
   // window.particlesJS.load('div-id', 'path/to/particles.json', function() {
   //   console.log("Particles loaded");
   // });
+
+
   particlesJS.load('particles-js', '/particles.json', function() {
      console.log('callback - particles.js config loaded');
    });
