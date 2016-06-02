@@ -1,10 +1,22 @@
+
+
 <div id="particles-js">
+
+<div class="list">
+{{home.selectedAsteroid.name}}
+  <ul>
+    <li ng-repeat="details in home.asteroids" ng-click="home.selectAsteroid(details)">
+    {{details.name}}
+    </li>
+  </ul>
+</div>
   <div id="earthImage" class="center">
     <div class="asteroidOuter">   
-      <div class="asteroidInner" ng-repeat="asteroid in home.asteroids track by $index" style="animation: circle {{asteroid/10000000}}s linear infinite;"><div class="asteroid" style="left: -{{asteroid/1000000}}px;"></div></div>
+      <div class="asteroidInner" ng-repeat="asteroid in home.asteroids track by $index" style="animation: circle {{asteroid.close_approach_data[0].miss_distance.kilometers/1000000}}s linear infinite;">
+        <div class="asteroid" style="left: -{{asteroid.close_approach_data[0].miss_distance.kilometers/500000}}px;" ng-class="{ selected: home.selectedAsteroid.name === asteroid.name }"></div>
+      </div>
     </div>
   </div>
-
 </div> 
 <div class="count-particles"></div>
 

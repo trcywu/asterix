@@ -7,6 +7,14 @@ function HomeController(Asteroid){
 
   var self       = this;
   self.asteroids = []; 
+  self.selectAsteroid = selectAsteroid;
+  self.selectedAsteroid = {};
+
+  function selectAsteroid(details){
+    self.selectedAsteroid = details;
+
+
+  }
 
   self.getName = function(name){
     return name.replace(/[{()}]/g, '').split(" ")[1];
@@ -21,9 +29,12 @@ function HomeController(Asteroid){
 
     angular.forEach(self.all, function(value, key) {
       angular.forEach(value, function(details, key) {
-        angular.forEach(details.close_approach_data, function(orbit_info, key) {
-          self.asteroids.push(orbit_info.miss_distance.kilometers);
-        });
+
+        self.asteroids.push(details);
+
+        // angular.forEach(details.close_approach_data, function(orbit_info, key) {
+          
+        // });
       });
     });
 

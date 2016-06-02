@@ -2,6 +2,11 @@
   position:relative;
 }
 
+.list {
+  color: white;
+  position: absolute;
+}
+
 .asteroidOuter {
   height: 100px;
   width: 100px;
@@ -14,6 +19,12 @@
   border-radius: 100%;
   position: absolute;
   top: 50%;
+}
+
+.asteroid.selected {
+  background: red;
+  width: 20px;
+  height: 20px;
 }
 
 @keyframes circle {
