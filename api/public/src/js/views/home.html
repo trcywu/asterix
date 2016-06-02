@@ -3,13 +3,19 @@
 <div id="particles-js">
 
 <div class="list">
-{{home.selectedAsteroid.name}}
   <ul>
     <li ng-repeat="details in home.asteroids" ng-click="home.selectAsteroid(details)">
     {{details.name}}
     </li>
   </ul>
 </div>
+<div class="infobox">
+  Name: {{home.selectedAsteroid.name}}
+  Est. Diameter: {{home.selectedAsteroid.estimated_diameter.meters.estimated_diameter_min}}m
+  Miss_Distance: {{home.selectedAsteroid.close_approach_data[0].miss_distance.kilometers}}km
+</div>
+
+
   <div id="earthImage" class="center">
     <div class="asteroidOuter">   
       <div class="asteroidInner" ng-repeat="asteroid in home.asteroids track by $index" style="animation: circle {{asteroid.close_approach_data[0].miss_distance.kilometers/1000000}}s linear infinite;">

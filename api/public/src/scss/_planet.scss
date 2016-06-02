@@ -2,9 +2,21 @@
   position:relative;
 }
 
+.infobox {
+  color: red;
+  margin: 1px solid red;
+  vertical-align: flex;
+  float: right;
+  size: 8px;
+  width: 100px;
+  height: 100px;
+
+}
+
 .list {
   color: white;
   position: absolute;
+  size: 6px;
 }
 
 .asteroidOuter {
