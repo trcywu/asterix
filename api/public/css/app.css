@@ -7948,20 +7948,38 @@ button.close {
   position: relative;
 }
 
+.ul-list {
+  float: left;
+  width: 160px;
+  height: 580px;
+  font-size: 10px;
+  border: 2px solid white;
+  margin: 20px 20px 20px 20px;
+  padding: 8px;
+}
+
 .infobox {
   color: red;
   margin: 1px solid red;
-  vertical-align: flex;
   float: right;
-  size: 8px;
-  width: 100px;
+  size: 10px;
+  width: 220px;
   height: 100px;
+  margin: 10 10 10 10;
 }
 
 .list {
   color: white;
   position: absolute;
-  size: 6px;
+}
+
+.asteroid-info {
+  display: inline-block;
+}
+
+.asteroid-info:hover {
+  cursor: pointer;
+  color: #6699ff;
 }
 
 .asteroidOuter {
@@ -7970,18 +7988,16 @@ button.close {
 }
 
 .asteroid {
-  width: 10px;
-  height: 10px;
-  background: white;
   border-radius: 100%;
   position: absolute;
   top: 50%;
+  background-image: url("../src/images/asteroid-surface.jpg");
+  background-size: cover;
+  box-shadow: inset -10px -10px 15px black;
 }
 
 .asteroid.selected {
   background: red;
-  width: 20px;
-  height: 20px;
 }
 
 @keyframes circle {
@@ -8017,20 +8033,19 @@ canvas {
 }
 
 #particles-js {
-  position: absolute;
   width: 100%;
-  height: 100%;
+  position: fixed;
   background: #f5f5f5;
   background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%);
 }
 
 #earthImage {
-  width: 100px;
-  height: 100px;
+  width: 180px;
+  height: 180px;
   position: absolute;
   background: url(http://www.noirextreme.com/digital/Earth-Color4096.jpg);
   border-radius: 50%;
-  background-size: 200px;
+  background-size: 360px;
   box-shadow: inset 16px 0 40px 6px black, inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);
   animation-name: rotate;
   animation-duration: 60s;

@@ -26,11 +26,11 @@
           <li>
            <a href="#" ui-sref="asteroids">Asteroids</a>
          </li>
-         <li ng-show="users.checkLoggedIn()">
+         <!-- <li ng-show="users.checkLoggedIn()">
           <a href="#" ui-sref="users">Users</a>
-        </li>
+        </li> -->
         <li ng-show="users.checkLoggedIn()">
-          <a href="#" ui-sref="user">User</a>
+          <a href="#" ui-sref="user">{{users.currentUser._doc.username}}</a>
         </li>
         <li ng-hide="users.checkLoggedIn()">
           <a href="#" ng-click="users.open('login')">Login</a>
