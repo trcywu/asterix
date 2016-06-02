@@ -58612,12 +58612,10 @@ angular
  function AsteroidsController(Asteroid){
 
   var self = this;
-  console.log(Asteroid);
+
   Asteroid.query(function(response) {
     self.data = response.data;
   });
-
-
 
  }
 
@@ -58625,37 +58623,32 @@ angular
   .module('asteroidsApp')
   .controller('HomeController', HomeController);
 
-HomeController.$inject = [];
-function HomeController(){
+HomeController.$inject = ['Asteroid'];
+function HomeController(Asteroid){
 
-  // ******** instantiate particles.js ******** //
+  var self       = this;
+  self.asteroids = []; 
 
-  // window.particlesJS.load('div-id', 'path/to/particles.json', function() {
-  //   console.log("Particles loaded");
-  // });
-
+  self.getName = function(name){
+    return name.replace(/[{()}]/g, '').split(" ")[1];
+  };
 
   particlesJS.load('particles-js', '/particles.json', function() {
-     console.log('callback - particles.js config loaded');
-   });
+    console.log('callback - particles.js config loaded');
+  });
 
-  // var stats = new Stats();
-  // stats.setMode(0);
-  // stats.domElement.style.position = 'absolute';
-  // stats.domElement.style.left = '0px';
-  // stats.domElement.style.top = '0px';
-  // document.body.appendChild(stats.domElement);
-  // var count_particles = document.querySelector('.js-count-particles');
-  // var update = function(){
-  //   stats.begin();
+  Asteroid.query(function(response) {
+    self.all = response.data.near_earth_objects;
 
-  //   stats.end();
-  //   if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-  //     count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-  //   }
-  //   requestAnimationFrame(update);
-  // };
-  // requestAnimationFrame(update);
+    angular.forEach(self.all, function(value, key) {
+      angular.forEach(value, function(details, key) {
+        angular.forEach(details.close_approach_data, function(orbit_info, key) {
+          self.asteroids.push(orbit_info.miss_distance.kilometers);
+        });
+      });
+    });
+
+  });
 
 }
 angular

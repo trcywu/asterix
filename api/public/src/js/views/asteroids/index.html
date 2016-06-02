@@ -1,36 +1,19 @@
 <h1>Asteroids</h1>
 <section ng-controller = "AsteroidsController as asteroids">
   <h2>Asteroids in space</h2>
-<!-- Original:  <div ng-repeat="(date, value) in asteroids.data.near_earth_objects track by $index"> -->
-  
-<!-- New data access: -->
 
-<div ng-repeat="(date, value) in asteroids.data.near_earth_objects">
- {{date}}
-  <ul ng-repeat="details in value">
-    <li>Name: {{ details.name }}</li>
-    <li>Est Diameter: {{ details.estimated_diameter.meters.estimated_diameter_min }}m across (approx)</li>
-    <li>neo_referencing_id: {{ details.neo_reference_id }}</li>
-    <li>is it hazardous to Earth? {{ details.is_potentially_hazardous_asteroid}}</li>
-    <ul ng-repeat="orbit_info in details.close_approach_data">
-      <li>Orbiting Planet: {{ orbit_info.orbiting_body }}</li>
-      <li>Miss-Distance: {{ orbit_info.miss_distance.kilometers }} kilometers away</li>
-      <li>Relative Velocity: Travelling at {{ orbit_info.relative_velocity.kilometers_per_hour }} km/h</li>
+  <div ng-repeat="(date, value) in asteroids.data.near_earth_objects">
+    {{date}}
+    <ul ng-repeat="details in value">
+      <li>Name: {{ details.name }}</li>
+      <li>Est Diameter: {{ details.estimated_diameter.meters.estimated_diameter_min }}m across (approx)</li>
+      <li>neo_referencing_id: {{ details.neo_reference_id }}</li>
+      <li>is it hazardous to Earth? {{ details.is_potentially_hazardous_asteroid}}</li>
+      <ul ng-repeat="orbit_info in details.close_approach_data">
+        <li>Orbiting Planet: {{ orbit_info.orbiting_body }}</li>
+        <li>Miss-Distance: {{ orbit_info.miss_distance.kilometers }} kilometers away</li>
+        <li>Relative Velocity: Travelling at {{ orbit_info.relative_velocity.kilometers_per_hour }} km/h</li>
+      </ul>
     </ul>
-
-
-  </ul>
-
- 
-<!-- 
-  <ul class="asteroids" ng-repeat="key in asteroids.data.near_earth_objects">
-     <li ng-repeat="(item, val) in key">
-     <p>name:{{val.name}}</p>
-     <p>neo_reference_id:{{val.neo_reference_id}}</p>
-     <p>orbiting body: {{val.close_approach_data}} </p>
-    </li>
-  </ul -->
-  </div>
-
-
+    </div>
 </section>
