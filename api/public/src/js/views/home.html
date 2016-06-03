@@ -1,18 +1,23 @@
 <div id="particles-js">
 <div class="list">
 
+<!-- <div ng-repeat="(key, value) in home.asteroids">
+  {{key}}
+</div>
+ -->
   <ul class="ul-list">
-  <h4>Asteroids approaching Earth in the next 7 days</h4>
+  <h4>7 day Forecast</h4>
     <li class="asteroid-info" ng-repeat="details in home.asteroids" ng-click="home.selectAsteroid(details)">
     {{details.name}}
     </li>
 
-
+    <h6>
     <p>Name: {{home.selectedAsteroid.name}}</p>
     <p>Est. Diameter: {{home.selectedAsteroid.estimated_diameter.meters.estimated_diameter_min}}m</p>
     <p>Miss_Distance: {{home.selectedAsteroid.close_approach_data[0].miss_distance.kilometers}}km</p>
     <p>Is it hazardous to Earth? {{home.selectedAsteroid.is_potentially_hazardous_asteroid}}</p>
     <p>Relative Velocity: Travelling at {{ home.selectedAsteroid.close_approach_data[0].relative_velocity.kilometers_per_hour}} km/h</p>
+    </h6>
 
     
   </ul>

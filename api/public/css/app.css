@@ -1984,13 +1984,13 @@ pre code {
 
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 100%;
   }
 }
 
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 100%s;
   }
 }
 
@@ -8030,6 +8030,11 @@ img {
 canvas {
   display: block;
   vertical-align: bottom;
+}
+
+.container {
+  width: 100%;
+  padding: 10px 10px 10px 10px;
 }
 
 #particles-js {
