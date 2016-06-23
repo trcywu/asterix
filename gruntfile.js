@@ -3,15 +3,15 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
       src: [
-        'src/js/**/*.js',
-        '!src/js/_bower.js'
+        'public/src/js/**/*.js',
+        '!public/src/js/_bower.js'
       ]
     },
     bower_concat: {
       all: {
         dest: {
-          'js': 'src/js/_bower.js',
-          'css': 'src/scss/_bower.scss'
+          'js': 'public/src/js/_bower.js',
+          'css': 'public/src/scss/_bower.scss'
         },
         mainFiles: {
           bootstrap: [
@@ -37,9 +37,9 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'src/js/_bower.js',
-          'src/js/app.js',
-          'src/js/**/*.js'
+          'public/src/js/_bower.js',
+          'public/src/js/app.js',
+          'public/src/js/**/*.js'
         ],
         dest: 'js/app.js'
       }
@@ -53,12 +53,12 @@ module.exports = function(grunt) {
         options: { reload: true }
       },
       scss: {
-        files: ['src/scss/**/*.scss'],
+        files: ['public/src/scss/**/*.scss'],
         tasks: ['sass'],
         options: { livereload: true }
       },
       js: {
-        files: ['src/js/**/*.js'],
+        files: ['public/src/js/**/*.js'],
         tasks: ['jshint', 'concat', 'uglify'],
         options: { livereload: true }
       },
